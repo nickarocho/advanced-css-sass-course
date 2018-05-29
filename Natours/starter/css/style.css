@@ -1,3 +1,24 @@
+/*
+|-----------------------------------------------|
+  0 - 600px:         Phone (phone)
+  600px - 900px:     Tablet portrait (tab-port)
+  900px - 1200px:    Tablet landscape (tab-land)
+  [1200px - 1800px]: normal styles
+  1800px+:           Big desktop (big-desktop)
+|-----------------------------------------------|
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+** EM vs. PX? **
+We use em so that the font size remains consistent
+regardless of the user's browser settings
+
+(1em = 16px)
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -34,16 +55,28 @@
   box-sizing: inherit; }
 
 html {
-  /* sets root font size to base 10 so we can do easy math with 'rem' units 
-  AKA- This defines what 1rem is */
+  /* 
+    !!! This defines what 1rem is
+    (sets root font size to base 10 so we can do easy math with 'rem' units) 
+  */
   font-size: 62.5%;
-  /* Default font size of the browser is 16px.
+  /* 
+    Default font size of the browser is 16px.
     We want the default font size to be 10px, so we
     can multiply rems by base 10, so we divide 10 (the size we want)
     by 16 (default browser size). This equals .625, so we set
     the root font size to 62.5% so that no matter what size the
     user chooses (or zooms), the font size remains consistent.
   */ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
