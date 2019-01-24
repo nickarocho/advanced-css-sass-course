@@ -1306,12 +1306,12 @@ body {
 }
 
 .navigation__background {
-  height: 6rem;
-  width: 6rem;
+  height: 7rem;
+  width: 7rem;
   border-radius: 50%;
   position: fixed;
-  top: 6.5rem;
-  right: 6.5rem;
+  top: 6rem;
+  right: 6rem;
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: 1000;
   -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
