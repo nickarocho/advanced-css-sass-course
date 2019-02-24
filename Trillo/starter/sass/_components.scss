@@ -395,15 +395,18 @@
         margin-right: .7rem;
 
         // Older browsers
-        // background-image: url(../img/chevron-thin-right.svg);
-        // background-size: cover;
-
+        background-image: url(../img/chevron-thin-right.svg);
+        background-size: cover;
+        
         // Newer browsers - masks
-        background-color: var(--color-primary-light);
-        -webkit-mask-image: url(../img/chevron-thin-right.svg);
-        -webkit-mask-size: cover; //important for making the icon match the size of the width/height
-        mask-image: url(../img/chevron-thin-right.svg);
-        mask-size: cover; //important for making the icon match the size of the width/height
+        @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+            background-color: var(--color-primary-light);
+            -webkit-mask-image: url(../img/chevron-thin-right.svg);
+            -webkit-mask-size: cover; //important for making the icon match the size of the width/height
+            mask-image: url(../img/chevron-thin-right.svg);
+            mask-size: cover; //important for making the icon match the size of the width/height
+            background-image: none; //to show pink icon color
+        }
     }
 }
 
